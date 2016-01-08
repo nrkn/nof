@@ -1,0 +1,25 @@
+{
+  "name": "nof",
+  "version": "0.0.1",
+  "description": "Object factory",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nrkn/nof.git"
+  },
+  "keywords": [
+    "object",
+    "factory"
+  ],
+  "author": "Nik Coughlin <nrkn.com@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrkn/nof/issues"
+  },
+  "homepage": "https://github.com/nrkn/nof#readme",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  }  
+}
