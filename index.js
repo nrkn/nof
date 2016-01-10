@@ -6,7 +6,8 @@ const ObjectFactory = opts => {
   const { 
     name, 
     properties, 
-    propertyTransform 
+    propertyTransform,
+    mixins
   } = options
   
   const Factory = ( ...args ) => {
@@ -34,6 +35,13 @@ const ObjectFactory = opts => {
     properties.forEach( ( name, i ) =>
       instance[ name ] = propertyTransform( name, args[ i ] )
     )
+    
+    if( mixins !== undefined ){
+      Object.keys( mixins ).forEach( key =>
+        instance[ key ] = ( ...args ) => 
+          mixins[ key ]( ...[ instance ].concat( args ) )
+      )
+    }
     
     return instance
   }
